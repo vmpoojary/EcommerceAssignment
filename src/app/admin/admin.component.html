@@ -1,0 +1,50 @@
+<nav>
+  <a routerLink='/login' (click)='logout()'>logout</a>
+</nav>
+<div>
+  <form #featureForm='ngForm'>
+    <p>Feature Module Edit</p>
+    <table>
+      <thead>
+        <th>
+          id
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          EDIT NAME
+        </th>
+        <th>
+          EDIT
+        </th>
+      </thead>
+      <tr *ngFor ='let feature of featureList' >
+        <td>
+          {{feature.id}}
+        </td>
+        <td>
+          {{feature.name}}
+        </td>
+        <td>
+          <input type="text" name='featureName' ngModel >
+      </td>
+      <td>
+        <button type="button" (click)="edit(feature)"> EDIT</button>
+      </td>
+      </tr>
+    </table>
+    <br>
+  </form>
+
+  <form #productForm='ngForm'>
+    <p>ADD PRODUCT</p>
+    <input type="number" name="id" ngModel placeholder="id">
+    <input type="text" name="name" ngModel placeholder="Name">
+    <input type="text" name="Category" ngModel placeholder="Catgory">
+    <br>
+    <input type="text" name="desc" ngModel placeholder="Description">
+    <button type="button" (click)='addProduct()'> ADD</button>
+  </form>
+
+</div>
